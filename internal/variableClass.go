@@ -1,4 +1,4 @@
-package internalValue
+package InternalValue
 
 const (
 	StatuscodeOk = 200

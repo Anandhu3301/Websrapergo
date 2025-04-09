@@ -12,7 +12,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/olekukonko/tablewriter"
 
-    "github.com/Anandhu3301/Websrapergo/internalValue"
+    "github.com/Anandhu3301/Websrapergo/InternalValue"
 
 )
 
@@ -33,7 +33,7 @@ func main() {
 		log.Fatal("Error")
 	}
 	defer res.Body.Close()
-	if res.StatusCode != internalValue.StatuscodeOk {
+	if res.StatusCode != InternalValue.StatuscodeOk {
 		log.Fatalf("Status code error: %d %s", res.StatusCode, res.Status)
 	}
 	doc, _ := goquery.NewDocumentFromReader(res.Body)
@@ -45,7 +45,7 @@ func main() {
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetHeader([]string{"Link", "Status"})
 
-	for i := internalValue.LoopStarter; i < len(httpsresult); i++ {
+	for i := InternalValue.LoopStarter; i < len(httpsresult); i++ {
 		wg.Add(1)
 		go func(i int) {
 			defer wg.Done()
