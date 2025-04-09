@@ -1,4 +1,4 @@
-package InternalValue
+package internalValues
 
 import (
 	"fmt"
